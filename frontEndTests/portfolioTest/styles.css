@@ -1,0 +1,143 @@
+:root{
+    --nav-size: 80px;
+    --color-A: #1c3756;
+    --color-B: #561c37;
+    --color-C: #1e1e1e;
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,100&display=swap');
+  
+  body{
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  a{
+    text-decoration: none;
+    color: var(--color-A);
+    font-weight: bold;
+  }
+  
+  html{
+    scroll-behavior: smooth;
+  }
+  
+  h1{
+    font-size: 40pt;
+    margin: 0px;
+  }
+  
+  h3{
+    font-size: 20pt;
+    margin: 0px;
+    color: #ce084d;
+  }
+  
+  .small-icon{
+    width: 80px;
+    padding-top: 40px;
+    filter: invert();
+    transition: .3s;
+  }
+  
+  .small-icon:hover{
+    width: 100px;
+  }
+  
+  .project-tile{
+    color: var(--color-C);
+    background-color: white;
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 3px 3px 20px 0px;
+    overflow: hidden;
+  }
+  
+  #title-container{
+    text-align: right;
+  }
+  
+  #thumb{
+    width: 300px;
+    transition: .3s;
+  }
+  
+  #thumb:hover{
+    width: 400px;
+  }
+  
+  #navbar{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: var(--nav-size);
+    background-color: var(--color-A);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  #welcome-section{
+    position: relative;
+    top: var(--nav-size);
+    width: 100%;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to top right, var(--color-C), #111111);
+  }
+  
+  #footer{
+    width: 100%;
+    height: 200px;
+    background-color: var(--color-A);
+    display: flex;
+    justify-content: center;
+  }
+  
+  #container{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #projects{
+    text-align: center;
+    color: white;
+    position: relative;
+    background-color: var(--color-B);
+    padding: 30px;
+  }
+  
+  #project-container{
+    display: flex;
+    justify-content: center;
+  }
+  
+  #nav-button {
+    color: white;
+    margin-right: 30px;
+    height: var(--nav-size);
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+  }
+  
+  #nav-button:hover{
+    background-color: var(--color-B);
+  }
+  
+  @media(max-width: 400px){
+    
+  }

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+    <title>freeCodeCamp(🔥)Test</title>
+    <link rel="stylesheet" href="styles.css" type="text/css"/>
+</head>
+<html>
+<body>
+
+    <div class="background"></div>
+
+<div class="container">
+<h1 id="title">A survey form that breath</h1>
+
+
+<p id="description"> Fill this form. This is a short explanation of this form porpouse. Text here text there. A generic form that means nothing. Just makes you wanna breath. Stay safe.✌</p>
+
+<form id="survey-form">
+  <label id="name-label" class="label"> Name: </label>
+  <input class="input-text" type="text" name="name" id="name" placeholder="Enter your name" required>
+  
+  <label id="email-label" class="label"> E-mail: </label>
+  <input class="input-text" type="email" name="email" id="email" placeholder="enter@your.email" required>
+  
+  <label id="number-label" class="label"> A number between 1 and 365: </label>
+  <input class="input-text" type="number" name="number" id="number" placeholder="123" min="0" max="365">
+  
+  <label for="pet" class="label">Your favorite pet:</label>
+  <div class="container-dropdown">
+  <select name="pet" id="dropdown">
+    <option value="dog">Dog</option>
+    <option value="cat">Cat</option>
+    <option value="monkey">Monkey</option>
+    <option value="lhama">Lhama</option>
+  </select>
+  </div>
+  
+  <p class="label">Choose a color:</p>
+  <div class="container-options">
+  <div>
+  <input type="radio" name="color" value="blue" id="color" checked>
+  <label for="blue" class="label">Blue</label>
+  </div>
+  
+  <div>
+  <input type="radio" name="color" value="red" id="color">
+  <label for="red" class="label">Red</label>
+  </div>
+   
+  <div>
+  <input type="radio" name="color" value="green" id="color">
+  <label for="green" class="label">Green</label>
+  </div>
+  </div>
+  
+  <p class="label">Choose some fruits:</p>
+  <div class="container-options">
+  <div>
+  <input type="checkbox" id="food1" name="food1" value="banana">
+  <label for="food1" class="label">banana</label>
+  </div>
+  <div>
+  <input type="checkbox" id="food2" name="food2" value="apple">
+  <label for="food2" class="label">apple</label>
+  </div>
+  <div>
+  <input type="checkbox" id="food3" name="food3" value="rice">
+  <label for="food3" class="label">rice</label>
+  </div>
+  <div>
+  <input type="checkbox" id="food4" name="food4" value="chocolate">
+  <label for="food4" class="label">chocolate</label>
+  </div>
+  </div>
+  
+  <div class=container-comments>
+  <label for="comments" class="label">Comments:</label>
+  <textarea name="comments"></textarea>
+  </div>
+  
+  <button type="submit" id="submit">Submit</button>
+  
+</form>
+</div>
+
+</body>
+</html>

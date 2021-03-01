@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<head>
+    <title>freeCodeCamp(🔥)Test</title>
+    <link rel="stylesheet" href="styles.css" type="text/css"/>
+</head>
+<html>
+<body>
+
+<div id="grid">
+<nav id="navbar">
+  <div id="title-background">
+  <header id="title">
+    The Open-Source<br>
+    OpenGL Utility Toolkit
+    </header>
+  </div>
+  <h4><a href="#Initialization_Functions" class="nav-link">Initialization Functions</a></h4>
+  
+
+  <div class="hide">
+    <ul>
+      <li>glutInit</li>
+      <li>glutInitWindowPosition</li>
+      <li>glutInitDisplayMode</li>
+      <li>glutInitDisplayString</li>
+      <li>glutInitErrorFunc</li>
+    </ul>
+  </div>
+
+  <h4><a href="#Event_Processing_Functions" class="nav-link">Event Processing Functions</a></h4>
+  
+  <div class="hide">
+    <ul>
+      <li>glutMainLoop</li>
+      <li>glutMainLoopEvent</li>
+      <li>glutLeaveMainLoop</li>
+    </ul>
+  </div>
+  <h4><a href="#Window_Functions" class="nav-link">Window Functions</a></h4>
+  
+  <div class="hide">
+    <ul>
+      <li>glutCreateWindow</li>
+      <li>glutCreateSubwindow</li>
+      <li>glutDestroyWindow</li>
+    </ul>
+  </div>
+  
+  <h4><a href="#Menu_Functions" class="nav-link">Menu Functions</a></h4>
+  <div class="hide">
+    <ul>
+      <li>glutCreateMenu</li>
+      <li>glutDestroyMenu</li>
+    </ul>
+  </div>
+  <h4><a href="#Global_Callback_Registration_Functions" class="nav-link">Global Callback Registration Functions</a></h4>
+  
+  <div class="hide">
+    <ul>
+      <li>glutTimerFunc</li>
+      <li>glutIdleFunc</li>
+      <li>glutMenuStatusFunc</li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main-doc">
+  <section class="main-section" id="Initialization_Functions">
+    <header class="section-header">Initialization Functions</header>
+    <ul>
+      <li>glutInit</li>    
+      <li>glutInitWindowPosition</li>    
+      <li>glutInitDisplayMode</li>    
+      <li>glutInitDisplayString</li>    
+      <li>glutInitErrorFunc</li>    
+    </ul>
+    <h3>glutInitWindowPosition, glutInitWindowSize</h3>
+    <p>The glutInitWindowPosition and glutInitWindowSize functions specify a desired position and size for windows that freeglut will create in the future.</p>
+    <h4>Usage</h4>
+    <code>void glutInitWindowPosition ( int x, int y );
+void glutInitWindowSize ( int width, int height );</code>
+    <h4>Description</h4>
+    <p>The glutInitWindowPosition and glutInitWindowSize functions specify a desired position and size for windows that freeglut will create in the future. The position is measured in pixels from the upper left hand corner of the screen, with "x" increasing to the right and "y" increasing towards the bottom of the screen. The size is measured in pixels. freeglut does not promise to follow these specifications in creating its windows, but it certainly makes an attempt to.</p>
+    <p>The position and size of a window are a matter of some subtlety. Most windows have a usable area surrounded by a border and with a title bar on the top. The border and title bar are commonly called "decorations." The position of the window unfortunately varies with the operating system. On both Linux and Windows, you specify the coordinates of the upper left-hand corner of the window's decorations.</p>
+    <p>Also for both operating systems, the size of the window is the size of the usable interior.
+With glutGet information can be acquired about the current window's size, position and decorations. Note however that according to freeglut's conventions, the information returned about the window coordinates does not correspond to the coordinates used when setting window position.</p>
+    <p> In addition, GLUT only accepts positive window coordinates, and ignores all negative window coordinates. But if GLUT_ALLOW_NEGATIVE_WINDOW_POSITION is enabled, then negative window coordinates can be used. This is useful for multi-montitor setups where the second monitor may be in the negative desktop space of the primary monitor, as now the window can be placed on the additional monitors. Furthermore, this flag also determines how negative coordinates and sizes are interpreted for subwindows.</p>
+    <p>Windows has some additional quirks which the application programmer should know about. First, the minimum y-coordinate of a window decoration is zero. (This is a feature of freeglut and can be adjusted if so desired.) Second, there appears to be a minimum window width on Windows which is 104 pixels. The user may specify a smaller width, but the Windows system calls ignore it. It is also impossible to make a window narrower than this by dragging on its corner.</p>
+    <h4>Changes From GLUT</h4>
+    <p>For some reason, GLUT is not affected by the 104-pixel minimum window width. If the user clicks on the corner of a window which is narrower than this amount, the window will immediately snap out to this width, but the application can call glutReshapeWindow and make a window narrower again.</p>
+    <p>If GLUT_ALLOW_NEGATIVE_WINDOW_POSITION is enabled, glutInitWindowPosition will accept negative window coordinates.</p>
+  </section>
+  <hr>
+    <section class="main-section" id="Event_Processing_Functions">
+    <header class="section-header">Event Processing Functions</header>
+    <p>After an application has finished initializing its windows and menus, it enters an event loop. Within this loop, freeglut polls the data entry devices (keyboard, mouse, etc.) and calls the application's appropriate callbacks.</p>
+    <p>In GLUT, control never returned from the event loop (as invoked by the glutMainLoop function) to the calling function. This prevented an application from having re-entrant code, in which GLUT could be invoked from within a callback, and it prevented the application from doing any post-processing (such as freeing allocated memory) after GLUT had closed down. freeglut allows the application programmer to specify more direct control over the event loop by means of two new functions.</p>
+    <p>The first, glutMainLoopEvent, processes a single iteration of the event loop and allows the application to use a different event loop controller or to contain re-entrant code. The second, glutLeaveMainLoop, causes the event loop to exit nicely; this is preferable to the application's calling exit from within a GLUT callback.</p>
+    <ul>
+      <li>glutMainLoop</li>    
+      <li>glutMainLoopEvent</li>    
+      <li>glutLeaveMainLoop</li>    
+      <li>glutDestroyWindow</li>       
+    </ul>
+      <h3>glutMainLoop</h3>
+    <p>The glutMainLoop function enters the event loop.</p>
+      <h4>Usage</h4>
+    <code>void glutMainLoop ( void );</code>
+       <h4>Description</h4>
+    <p>The glutMainLoop function causes the program to enter the window event loop. An application should call this function at most once. It will call any application callback functions as required to process mouse clicks, mouse motion, key presses, and so on.</p>
+      <h4>Changes From GLUT</h4>
+    <p>In GLUT, there was absolutely no way for the application programmer to have control return from the glutMainLoop function to the calling function. freeglut allows the programmer to force this by setting the GLUT_ACTION_ON_WINDOW_CLOSE option and invoking the glutLeaveMainLoop function from one of the callbacks. Stopping the program this way is preferable to simply calling exit from within a callback because this allows freeglut to free allocated memory and otherwise clean up after itself. (I know I just said this, but I think it is important enough that it bears repeating.)</p>
+  </section>
+  <hr>
+    <section class="main-section" id="Window_Functions">
+    <header class="section-header">Window Functions</header>
+    <ul>
+      <li>glutCreateWindow</li>    
+      <li>glutCreateSubwindow</li>    
+      <li>glutDestroyWindow</li>
+    </ul>
+      <h3>glutCreateSubwindow</h3>
+    <p>The glutCreateSubwindow function creates a subwindow of an existing window.</p>
+      <h4>Usage</h4>
+    <code>int glutCreateSubwindow(int window, int x, int y, int width, int height);</code>
+      <h4>Description</h4>
+    <p>Creates a subwindow of window that is at location x and y relative to the window's upper-left corner, and is of the specified width and height. The newly created window ID is returned by glutCreateSubwindow. By default, the position coordinates will only allow windows within the bounds of the parent. Negative coordinates be treated as coordinates from the opposite edge for a given axis. In addition, the width of the window will be taken into account. For example, if the parent window is 100 pixels wide, and the x is 10, and width is 20, the subwindow will be located at x = 10. If x is -10, then the subwindow will be located at 70 (parent - abs(pos) - dim). If the width or height are negative, then the dimension is taken as a subtraction of the parent dimension. For example, if the parent window is 100 pixels wide, and the x is 10, and width is 20, the subwindow will have a size of 20. If width is -20, then the subwindow will have a width of 70 (parent - pos - abs(dim)).</p>
+    <p>If GLUT_ALLOW_NEGATIVE_WINDOW_POSITION is enabled, the window behavior differs. Negative window coordinates are now accepted and may result in windows outside of the viewing area, depending on the platform of operation. Negative width and height are still used as a subtraction of the parent window dimension, but they do not take x or y into account. For example, if the parent window is 100 pixels wide, and the x is 10, and width is 20, the subwindow will be located at x = 10. If x is -10, then the subwindow will be located at x = -10. If the parent window is 100 pixels wide, and the x is 10, and width is 20, the subwindow will have a size of 20. If width is -20, then the subwindow will have a width of 80 (parent - abs(dim)).</p>
+  </section>
+    <hr>
+    <section class="main-section" id="Menu_Functions">
+    <header class="section-header">Menu Functions</header>
+    <ul>
+      <li>glutCreateWindow</li>    
+      <li>glutCreateSubwindow</li>    
+      <li>glutDestroyWindow</li>
+    </ul>
+      <h3>glutCreateSubwindow</h3>
+    <p>The glutCreateSubwindow function creates a subwindow of an existing window.</p>
+      <h4>Usage</h4>
+    <code>int glutCreateSubwindow(int window, int x, int y, int width, int height);</code>
+      <h4>Description</h4>
+    <p>Creates a subwindow of window that is at location x and y relative to the window's upper-left corner, and is of the specified width and height. The newly created window ID is returned by glutCreateSubwindow. By default, the position coordinates will only allow windows within the bounds of the parent. Negative coordinates be treated as coordinates from the opposite edge for a given axis. In addition, the width of the window will be taken into account. For example, if the parent window is 100 pixels wide, and the x is 10, and width is 20, the subwindow will be located at x = 10. If x is -10, then the subwindow will be located at 70 (parent - abs(pos) - dim). If the width or height are negative, then the dimension is taken as a subtraction of the parent dimension. For example, if the parent window is 100 pixels wide, and the x is 10, and width is 20, the subwindow will have a size of 20. If width is -20, then the subwindow will have a width of 70 (parent - pos - abs(dim)).</p>
+    <p>If GLUT_ALLOW_NEGATIVE_WINDOW_POSITION is enabled, the window behavior differs. Negative window coordinates are now accepted and may result in windows outside of the viewing area, depending on the platform of operation. Negative width and height are still used as a subtraction of the parent window dimension, but they do not take x or y into account. For example, if the parent window is 100 pixels wide, and the x is 10, and width is 20, the subwindow will be located at x = 10. If x is -10, then the subwindow will be located at x = -10. If the parent window is 100 pixels wide, and the x is 10, and width is 20, the subwindow will have a size of 20. If width is -20, then the subwindow will have a width of 80 (parent - abs(dim)).</p>
+  </section>
+    <hr>
+    <section class="main-section" id="Global_Callback_Registration_Functions">
+    <header class="section-header">Global Callback Registration Functions</header>
+    <ul>
+      <li>glutCreateWindow</li>    
+      <li>glutCreateSubwindow</li>    
+      <li>glutDestroyWindow</li>
+    </ul>
+      <h3>glutCreateSubwindow</h3>
+    <p>The glutCreateSubwindow function creates a subwindow of an existing window.</p>
+      <h4>Usage</h4>
+    <code>int glutCreateSubwindow(int window, int x, int y, int width, int height);</code>
+      <h4>Description</h4>
+    <p>Creates a subwindow of window that is at location x and y relative to the window's upper-left corner, and is of the specified width and height. The newly created window ID is returned by glutCreateSubwindow. By default, the position coordinates will only allow windows within the bounds of the parent. Negative coordinates be treated as coordinates from the opposite edge for a given axis. In addition, the width of the window will be taken into account. For example, if the parent window is 100 pixels wide, and the x is 10, and width is 20, the subwindow will be located at x = 10. If x is -10, then the subwindow will be located at 70 (parent - abs(pos) - dim). If the width or height are negative, then the dimension is taken as a subtraction of the parent dimension. For example, if the parent window is 100 pixels wide, and the x is 10, and width is 20, the subwindow will have a size of 20. If width is -20, then the subwindow will have a width of 70 (parent - pos - abs(dim)).</p>
+    <p>If GLUT_ALLOW_NEGATIVE_WINDOW_POSITION is enabled, the window behavior differs. Negative window coordinates are now accepted and may result in windows outside of the viewing area, depending on the platform of operation. Negative width and height are still used as a subtraction of the parent window dimension, but they do not take x or y into account. For example, if the parent window is 100 pixels wide, and the x is 10, and width is 20, the subwindow will be located at x = 10. If x is -10, then the subwindow will be located at x = -10. If the parent window is 100 pixels wide, and the x is 10, and width is 20, the subwindow will have a size of 20. If width is -20, then the subwindow will have a width of 80 (parent - abs(dim)).</p>
+  </section>
+  
+</main>
+</div>
+
+</body>
+</html>

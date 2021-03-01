@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap');
+
+body{
+  font-family: 'Roboto', sans-serif;
+  background-color: #0e0b1e;
+  margin: 0px;
+  color: white;
+  font-weight: lighter;
+  display: flex;
+  flex-direction: column;
+}
+
+.background{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://www.paintshoppro.com/static/psp/images/licensing/education/students.jpg");
+  background-size: cover;
+  opacity: .2;
+  z-index: -1;
+}
+
+.container{
+  align-self: center;
+  max-width: 750px;
+}
+
+#description{
+  margin: 0px 50px;
+  font-size: 14pt;
+  text-align: justify;
+}
+
+#title{
+  margin-left: 50px;
+  font-size: 30pt;
+  font-weight: bold;
+}
+
+.label{
+  font-weight: 400;
+  font-size: 16pt;
+  color: white;
+}
+
+.input-text{
+  width: 100%;
+  height: 30px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14pt;
+  font-weight: lighter;
+  margin: 5px 0px 30px 0px;
+}
+
+.container-dropdown{
+  display: flex;
+  flex-direction: row;
+  padding: 20px 0px;
+}
+
+.container-dropdown select{
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  width: 50%;
+  height: 40px;
+  font-size: 14pt;
+  font-weight: lighter;
+}
+
+.container-options label{
+  margin-right: 20px;
+  font-weight: lighter;
+}
+
+.container-options{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.container-comments{
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0px;
+}
+
+.container-comments textarea{
+  margin-top: 20px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  resize: none;
+  height: 100px;
+}
+
+#submit{
+  width: 200px;
+  height: 50px;
+  border: none;
+  background-color: #3059b2;
+  color: white;
+  font-size: 14pt;
+}
+
+#survey-form{
+  background: linear-gradient(0deg, #0e0b1e, #240e30);
+  animation: margin-animation 3s ease 0s infinite alternate;
+  border-radius: 20px;
+  padding: 50px;
+  
+}
+
+@keyframes margin-animation{
+  from{
+    /*background: linear-gradient(0deg, #0e0b1e, #240e30);*/
+    margin: 30px 50px;
+  }
+  to{
+    margin: 15px 35px;
+  }
+}
