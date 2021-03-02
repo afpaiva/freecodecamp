@@ -2,7 +2,7 @@
 
 I've been using this repository for freeCodeCamp(🔥) challenges and studies.
 
-## 🧪 Frontend Tests (html CSS course)
+## 🧪 Frontend Tests (Responsive Webdesign course)
 
 All of these tests were made following rules and restrictions, as seen on readme inside of each sub-folder.
 
@@ -11,3 +11,7 @@ All of these tests were made following rules and restrictions, as seen on readme
 - [Portfolio Test](https://afpaiva.github.io/freecodecamp/frontEndTests/portfolioTest/)
 - [Survey Test](https://afpaiva.github.io/freecodecamp/frontEndTests/surveyTest/)
 - [Tribute Page Test](https://afpaiva.github.io/freecodecamp/frontEndTests/tributePageTest/)
+
+<img src="certResponsiveWebdesign.png" alt="Responsive Webdesign Certification" style="width:500px;"/>
+
+<hr>
