@@ -10,9 +10,9 @@ JavaScript challenges done.
 - [Roman Numeral Converter](https://afpaiva.github.io/freecodecamp/frontEndTests/documentationTest/)
 - [Caesars Cipher](https://afpaiva.github.io/freecodecamp/frontEndTests/portfolioTest/)
 - [Telephone Number Validator](https://afpaiva.github.io/freecodecamp/frontEndTests/surveyTest/)
-- [Cash Register](https://afpaiva.github.io/freecodecamp/frontEndTests/tributePageTest/)
+- [Cash Register](https://afpaiva.github.io/freecodecamp/frontEndTests/tributePageTest/) - made by freeCodeCamp
 
-<img src="certResponsiveWebdesign.png" alt="Responsive Webdesign Certification" style="width:500px;"/>
+<img src="certJavaScriptAlgorithmsAndDataStrucures.png" alt="Responsive Webdesign Certification" style="width:500px;"/>
 
 <hr>
 
