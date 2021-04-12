@@ -6,13 +6,13 @@ I've been using this repository for freeCodeCamp(🔥) challenges and studies.
 
 JavaScript challenges done.
 
-- [Palindrome Checker](https://afpaiva.github.io/freecodecamp/frontEndTests/companyTest/)
-- [Roman Numeral Converter](https://afpaiva.github.io/freecodecamp/frontEndTests/documentationTest/)
-- [Caesars Cipher](https://afpaiva.github.io/freecodecamp/frontEndTests/portfolioTest/)
-- [Telephone Number Validator](https://afpaiva.github.io/freecodecamp/frontEndTests/surveyTest/)
-- [Cash Register](https://afpaiva.github.io/freecodecamp/frontEndTests/tributePageTest/) - made by freeCodeCamp
+- [Palindrome Checker](https://github.com/afpaiva/freecodecamp/blob/main/javaScriptDataStructures/PalindromeChecker.js)
+- [Roman Numeral Converter](https://github.com/afpaiva/freecodecamp/blob/main/javaScriptDataStructures/RomanNumeralConverter.js)
+- [Caesars Cipher](https://github.com/afpaiva/freecodecamp/blob/main/javaScriptDataStructures/CaesarsCipher.js)
+- [Telephone Number Validator](https://github.com/afpaiva/freecodecamp/blob/main/javaScriptDataStructures/TelephoneNumberValidator.js)
+- [Cash Register](https://github.com/afpaiva/freecodecamp/blob/main/javaScriptDataStructures/CashRegister.js) - made by freeCodeCamp
 
-<img src="certJavaScriptAlgorithmsAndDataStrucures.png" alt="Responsive Webdesign Certification" style="width:500px;"/>
+<img src="certJavaScriptAlgorithmsAndDataStrucures.png" alt="Responsive Webdesign Certification" style="width:350px;"/>
 
 <hr>
 
@@ -26,6 +26,6 @@ All of these tests were made following rules and restrictions, as seen on readme
 - [Survey Test](https://afpaiva.github.io/freecodecamp/frontEndTests/surveyTest/)
 - [Tribute Page Test](https://afpaiva.github.io/freecodecamp/frontEndTests/tributePageTest/)
 
-<img src="certResponsiveWebdesign.png" alt="Responsive Webdesign Certification" style="width:500px;"/>
+<img src="certResponsiveWebdesign.png" alt="Responsive Webdesign Certification" style="width:350px;"/>
 
 <hr>
